@@ -1,0 +1,38 @@
+package qaTasks;
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessNumbers {
+
+	public static void main(String[] args) {
+
+		Scanner in =new Scanner(System.in);
+		int guessNumber;
+		int min=1;
+		int max=10;
+
+		Random rm= new Random();
+		int randomNumber=rm.nextInt(max - min + 1) + min;
+		System.out.println(randomNumber);
+		
+		for(int i=1;i<5;i++)
+		{
+			System.out.println("Can you Guess a number between 1 to 10\n");
+			guessNumber=in.nextInt();
+
+			if(guessNumber>randomNumber)
+			{
+				System.out.println("Your Guess is Too High");
+			}
+			else if(guessNumber<randomNumber)
+			{
+				System.out.println("Your Guess is Too Low");
+			}
+			else if(guessNumber==randomNumber)
+			{		System.out.println("Yes, you guessed the number correctly within "+i+" attempt");
+					break;
+			}
+		}
+		System.exit(0);
+	}
+}
